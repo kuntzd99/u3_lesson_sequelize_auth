@@ -51,7 +51,7 @@ const UpdatePassword = async (req, res) => {
         },
         { where: { email: req.body.email }, returning: true }
       )
-      return res.send(user)
+      return res.send({ status: 'Success', msg: 'Password Updated' })
     }
     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   } catch (error) {
